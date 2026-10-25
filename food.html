@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="锦绣陕西特色美食：从榆林的羊杂碎到汉中的热面皮，一城一味，按城市索引全境风味。">
+  <title>特色美食 · 锦绣陕西</title>
+  <link rel="stylesheet" href="./vendor/ol/ol.css"><link rel="stylesheet" href="./css/common.css"><link rel="stylesheet" href="./css/scenic.css"><link rel="stylesheet" href="./css/food.css">
+</head>
+<body class="food-page">
+  <div id="site-nav"></div>
+  <main>
+    <section class="page-hero food-hero">
+      <div class="page-hero-media"><img src="./image/food18.jpg" alt="油泼面"></div>
+      <div class="container page-hero-content">
+        <div class="hero-en">LOCAL FLAVOURS OF SHAANXI</div>
+        <h1 data-zh="一城一味，十里不同" data-en="One city, one taste">一城一味，十里不同</h1>
+        <p class="hero-desc" data-zh="北边吃羊，南边吃米。黄河与汉江之间，一千公里不到的距离，换出两套完全不同的口味逻辑。这里按城市收着三十种吃食，每一道都指向一个具体的地方。" data-en="Mutton in the north, rice in the south. Between the Yellow River and the Han, less than a thousand kilometres apart, two entirely different logics of taste. Thirty dishes, each pointing to one specific place.">北边吃羊，南边吃米。黄河与汉江之间，一千公里不到的距离，换出两套完全不同的口味逻辑。这里按城市收着三十种吃食，每一道都指向一个具体的地方。</p>
+      </div>
+      <div class="hero-coordinate">FLAVOURS · 30 DISHES · 11 CITIES</div>
+    </section>
+
+    <section class="map-section" id="mapSection">
+      <div class="map-heading reveal">
+        <span class="eyebrow">01 / THE FLAVOUR MAP</span>
+        <h2 data-zh="先在地图上选一座城" data-en="Start with a city">先在地图上选一座城</h2>
+        <p data-zh="点地图上的光点，右侧滑出这座城的全部味道；也可以用右上角的下拉菜单直接跳到任意一道。三十道菜，一道不漏。" data-en="Tap a light and the panel slides in with every dish of that city, or pick one from the menu. All thirty dishes, nothing left out.">点地图上的光点，右侧滑出这座城的全部味道；也可以用右上角的下拉菜单直接跳到任意一道。三十道菜，一道不漏。</p>
+      </div>
+      <div class="map-container">
+        <div class="map-wrap" id="foodWrap">
+          <div class="shaanxi-map" id="foodMap">
+            <span class="map-caption">SHAANXI · FLAVOUR INDEX</span>
+            <div class="map-legend"><i></i><span data-zh="点击坐标 · 展开这座城的味道" data-en="SELECT A CITY">点击坐标 · 展开这座城的味道</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-picker">
+        <select id="dishPicker" aria-label="选择一道菜"></select>
+      </div>
+      <div class="map-hint" data-zh="点击地图上的光点 · 右侧展开这座城的全部味道" data-en="TAP A LIGHT · THE PANEL SLIDES IN">点击地图上的光点 · 右侧展开这座城的全部味道</div>
+    </section>
+
+    <div class="detail-panel" id="detailPanel" aria-hidden="true">
+      <div class="dp-hero" id="dpHero"><img id="dpImg" src="" alt=""><button class="dp-close" id="dpClose" aria-label="关闭">&times;</button><div class="dp-hero-copy"><div class="dp-kicker" id="dpKicker"></div><h2 id="dpTitle"></h2><p class="dp-sub" id="dpSub"></p></div></div>
+      <div class="dp-body" id="dpBody"></div>
+    </div>
+
+    <section class="section" id="dishesSection">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">02 / DISHES</span><h2 class="section-title" data-zh="按城市，一道一道吃过去" data-en="City by city, dish by dish">按城市，一道一道吃过去</h2></div>
+          <p class="section-intro" data-zh="标着播放标记的菜品另有视频，点“看视频”即可放大播放。所有照片都可以点击放大。" data-en="Dishes marked with a play symbol have video — select “Watch” to enlarge and play. Every photograph can be enlarged.">标着播放标记的菜品另有视频，点“看视频”即可放大播放。所有照片都可以点击放大。</p>
+        </div>
+        <div class="filter-bar" id="foodFilters"></div>
+        <div class="gallery-result-bar"><span id="foodCount"></span></div>
+        <div id="foodGroups"></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="./vendor/ol/ol.js"></script><script src="./js/data.js"></script><script src="./js/common.js"></script><script src="./js/map.js"></script><script src="./js/food.js"></script>
+</body>
+</html>

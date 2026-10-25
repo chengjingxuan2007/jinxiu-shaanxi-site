@@ -1,0 +1,6 @@
+/* 风景页专属样式：地图舞台 / 右侧抽屉 / 坐标点 / 合集标题全部迁入 common.css，三页共用 */
+
+@media (max-width: 650px) {
+  .map-marker { font-size: 11px; }
+  .map-heading h2 { font-size: 26px; }
+}

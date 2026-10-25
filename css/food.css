@@ -1,0 +1,27 @@
+/* 特色美食页 · 专属样式（地图舞台 / 右侧抽屉 / 合集标题见 common.css） */
+
+/* ---------- 首屏 ---------- */
+.food-hero .page-hero-media img { filter: saturate(.96) contrast(1.02); }
+.food-hero .page-hero-media::after { background: linear-gradient(0deg, rgba(37,45,58,.9), rgba(37,45,58,.24) 58%, rgba(37,45,58,.4)); }
+
+/* ---------- 按城市分组 ---------- */
+.food-group { margin-bottom: 84px; }
+.food-group:last-child { margin-bottom: 0; }
+.food-group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 30px; padding-bottom: 16px; border-bottom: 1px solid rgba(37,45,58,.16); }
+.food-group-head h3 { font-family: var(--serif); font-size: 34px; font-weight: 500; letter-spacing: .08em; }
+.food-group-head h3 span { margin-left: 12px; color: var(--muted); font-family: var(--latin); font-size: 11px; letter-spacing: .2em; }
+.food-group-count { color: var(--terracotta); font-size: 11px; letter-spacing: .14em; white-space: nowrap; }
+.food-group-intro { max-width: 520px; margin: -14px 0 30px; color: var(--muted); font-size: 12px; line-height: 1.9; }
+
+/* ---------- 卡片补充 ---------- */
+.food-card .story-card-media { aspect-ratio: 4 / 3; }
+.food-video-tag { position: absolute; z-index: 2; top: 14px; right: 14px; display: flex; align-items: center; gap: 6px; padding: 5px 10px; background: rgba(37,45,58,.72); color: var(--ivory); font-size: 9px; letter-spacing: .14em; backdrop-filter: blur(8px); }
+.food-video-tag::before { width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid currentColor; content: ''; }
+.food-card .card-footer button + button { margin-left: 14px; }
+.card-footer .play-link { border: 0; background: transparent; color: var(--green); cursor: pointer; font-size: 11px; letter-spacing: .12em; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 650px) {
+  .food-group-head { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .food-group-head h3 { font-size: 28px; }
+}

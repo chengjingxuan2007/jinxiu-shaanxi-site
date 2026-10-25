@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="锦绣陕西旋转展厅，以卡片开启风景、民俗与美食之旅。">
+  <title>旋转展厅 · 锦绣陕西</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/portal.css">
+</head>
+<body class="portal-body">
+  <div id="site-nav"></div>
+  <main class="portal-page">
+    <video class="portal-video" autoplay muted loop playsinline poster="./image/scenic18.jpg"><source src="./video/index.mp4" type="video/mp4"></video>
+    <div class="portal-shade"></div>
+    <div class="portal-orbit" aria-hidden="true"></div>
+    <div class="portal-content">
+      <header class="portal-title"><span class="eyebrow">THE SHAANXI COLLECTION</span><h1 data-zh="三秦万象，尽在一览" data-en="Shaanxi, in every dimension">三秦万象，尽在一览</h1><p data-zh="拖拽旋转展厅，点击中央卡片进入对应篇章" data-en="Drag to rotate. Select the centre card to enter a story.">拖拽旋转展厅，点击中央卡片进入对应篇章</p></header>
+      <div class="carousel-wrap"><div class="carousel" id="carousel"></div></div>
+      <div class="portal-controls"><div class="indicators" id="indicators"></div><span class="drag-hint">DRAG TO EXPLORE · 拖拽探索</span></div>
+    </div>
+  </main>
+  <script src="./js/data.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/portal.js"></script>
+</body>
+</html>

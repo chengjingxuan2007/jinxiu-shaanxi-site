@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="锦绣陕西民俗文化：AI 漫剧与动画、宣传海报、非遗时光轴，以及三十一项仍在流传的民间技艺。">
+  <title>民俗文化 · 锦绣陕西</title>
+  <link rel="stylesheet" href="./vendor/ol/ol.css"><link rel="stylesheet" href="./css/common.css"><link rel="stylesheet" href="./css/culture.css">
+</head>
+<body class="culture-page">
+  <div id="site-nav"></div>
+  <main>
+    <section class="page-hero culture-hero">
+      <div class="page-hero-media"><img src="./image/poster5.jpg" alt="城固皮影"></div>
+      <div class="container page-hero-content">
+        <div class="hero-en">LIVING CULTURE OF SHAANXI</div>
+        <h1 data-zh="人间有戏，手上有光" data-en="Where craft keeps the light">人间有戏，手上有光</h1>
+        <p class="hero-desc" data-zh="一块牛皮、一捧黄土、一方土布、一根提线。陕西的民俗不在展柜里，它在灯影后面、在锣鼓中间、在老人手上一遍一遍重复的动作里。" data-en="A piece of hide, a handful of clay, a length of homespun, a single string. Shaanxi’s traditions are not behind glass — they live behind the lit screen, inside the drums, and in the movements a pair of hands has repeated for a lifetime.">一块牛皮、一捧黄土、一方土布、一根提线。陕西的民俗不在展柜里，它在灯影后面、在锣鼓中间、在老人手上一遍一遍重复的动作里。</p>
+      </div>
+      <div class="hero-coordinate">CULTURE · 31 CRAFTS INDEXED</div>
+    </section>
+
+    <section class="section section-dark" id="filmSection">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">01 / MOTION</span><h2 class="section-title" data-zh="先看两段戏" data-en="Two films first">先看两段戏</h2></div>
+          <p class="section-intro" data-zh="用漫剧与动画，把散在乡野里的技艺重新讲一遍。点击画面即可放大播放，按 Esc 退出。" data-en="Comic drama and animation retell the crafts scattered across the countryside. Select a frame to enlarge and play; press Esc to close.">用漫剧与动画，把散在乡野里的技艺重新讲一遍。点击画面即可放大播放，按 Esc 退出。</p>
+        </div>
+        <div class="film-grid" id="filmGrid"></div>
+        <p class="film-caption" data-zh="影像为 AI 生成演绎，用于呈现非遗的叙事脉络，不代表历史现场的纪实记录。" data-en="These films are AI-generated interpretations, made to convey the narrative of each craft rather than to document a historical scene.">影像为 AI 生成演绎，用于呈现非遗的叙事脉络，不代表历史现场的纪实记录。</p>
+      </div>
+    </section>
+
+    <section class="section" id="posterSection">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">02 / POSTERS</span><h2 class="section-title" data-zh="海报上的六种手艺" data-en="Six crafts, six posters">海报上的六种手艺</h2></div>
+          <p class="section-intro" data-zh="剪纸、泥塑、秦腔、刺绣、皮影、架花。六张海报都是张骞故里的乡土手艺，点击图片可以放大细看。" data-en="Paper-cutting, clay, opera, embroidery, shadow puppetry and counted stitch — six crafts from Zhang Qian’s homeland. Select an image to look closer.">剪纸、泥塑、秦腔、刺绣、皮影、架花。六张海报都是张骞故里的乡土手艺，点击图片可以放大细看。</p>
+        </div>
+        <div class="poster-grid" id="posterGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="heritageSection">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">03 / CHRONOLOGY</span><h2 class="section-title" data-zh="一条时间轴，从汉到今天" data-en="One line, from Han to now">一条时间轴，从汉到今天</h2></div>
+          <p class="section-intro" data-zh="把非遗按年代排开，会发现它们并不是一层层叠上去的，而是同时活着。点击任意一条，展开它的来历。" data-en="Arranged by era, the crafts turn out not to be stacked in layers but to be alive at once. Select an entry to open its story.">把非遗按年代排开，会发现它们并不是一层层叠上去的，而是同时活着。点击任意一条，展开它的来历。</p>
+        </div>
+        <div class="timeline-wrap"><div class="timeline" id="timeline"></div></div>
+      </div>
+    </section>
+
+    <section class="map-section" id="gallerySection">
+      <div class="map-heading reveal">
+        <span class="eyebrow">04 / CRAFT &amp; CREATIVE</span>
+        <h2 data-zh="非遗文创 · 三十一种手艺" data-en="Craft goods · thirty-one hands">非遗文创 · 三十一种手艺</h2>
+        <p data-zh="点地图上的光点，右侧滑出这座城的全部手艺；也可以用右上角的下拉菜单直接跳到任意一件。三十一件，一件不漏。" data-en="Tap a light and the panel slides in with every craft of that city, or pick one from the menu. All thirty-one, nothing left out.">点地图上的光点，右侧滑出这座城的全部手艺；也可以用右上角的下拉菜单直接跳到任意一件。三十一件，一件不漏。</p>
+      </div>
+      <div class="map-container">
+        <div class="map-wrap" id="cultureWrap">
+          <div class="shaanxi-map" id="cultureMap">
+            <span class="map-caption">SHAANXI · CRAFT INDEX</span>
+            <div class="map-legend"><i></i><span data-zh="点击坐标 · 展开这座城的手艺" data-en="SELECT A CITY">点击坐标 · 展开这座城的手艺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-picker">
+        <select id="craftPicker" aria-label="选择一件手艺"></select>
+      </div>
+      <div class="map-hint" data-zh="点击地图上的光点 · 右侧展开这座城的全部手艺" data-en="TAP A LIGHT · THE PANEL SLIDES IN">点击地图上的光点 · 右侧展开这座城的全部手艺</div>
+    </section>
+
+    <div class="detail-panel" id="detailPanel" aria-hidden="true">
+      <div class="dp-hero" id="dpHero"><img id="dpImg" src="" alt=""><button class="dp-close" id="dpClose" aria-label="关闭">&times;</button><div class="dp-hero-copy"><div class="dp-kicker" id="dpKicker"></div><h2 id="dpTitle"></h2><p class="dp-sub" id="dpSub"></p></div></div>
+      <div class="dp-body" id="dpBody"></div>
+    </div>
+
+    <section class="section" id="cultureGallery">
+      <div class="container">
+        <div class="gallery-header reveal"><div><span class="eyebrow">05 / THE FULL INDEX</span><h2 data-zh="手艺合集" data-en="Every piece">手艺合集</h2></div><p data-zh="三十一件非遗文创全部列在这里，点击照片放大，或阅读完整来历。" data-en="All thirty-one pieces are listed here. Select a photograph to enlarge it, or read the full story.">三十一件非遗文创全部列在这里，点击照片放大，或阅读完整来历。</p></div>
+        <div class="filter-bar" id="cultureFilters"></div>
+        <div class="gallery-result-bar"><span id="cultureCount"></span></div>
+        <div class="card-grid" id="cultureGrid"></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="./vendor/ol/ol.js"></script><script src="./js/data.js"></script><script src="./js/common.js"></script><script src="./js/map.js"></script><script src="./js/culture.js"></script>
+</body>
+</html>

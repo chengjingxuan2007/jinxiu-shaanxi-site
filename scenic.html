@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="锦绣陕西特色风景：通过十市地图与城固县索引，探索陕西山河。">
+  <title>特色风景 · 锦绣陕西</title>
+  <link rel="stylesheet" href="./vendor/ol/ol.css"><link rel="stylesheet" href="./css/common.css"><link rel="stylesheet" href="./css/scenic.css">
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-media"><img src="./image/scenic13.jpg" alt="秦岭云雾"></div>
+      <div class="container page-hero-content"><div class="hero-en">LANDSCAPES OF SHAANXI</div><h1 data-zh="山河有形，岁月无声" data-en="Where the land remembers">山河有形，岁月无声</h1><p class="hero-desc" data-zh="从陕北高原到关中平原，再到秦巴山地。以城市为坐标，阅读陕西三种地貌的辽阔与细腻。" data-en="From the northern plateau through the Guanzhong plain to the Qinba mountains—an atlas of Shaanxi’s striking terrain.">从陕北高原到关中平原，再到秦巴山地。以城市为坐标，阅读陕西三种地貌的辽阔与细腻。</p></div><div class="hero-coordinate">SHAANXI · 31.7°—39.6° N</div>
+    </section>
+
+    <section class="map-section" id="mapSection">
+      <div class="map-heading reveal">
+        <span class="eyebrow">01 / THE CITY ATLAS</span>
+        <h2 data-zh="一张地图，十种陕西" data-en="One map, many Shaanxi stories">一张地图，十种陕西</h2>
+        <p data-zh="点击地图上的光点，右侧会滑出这座城的全部风景；也可以直接用右上角的下拉菜单跳到任意一处。城固县隶属汉中市，在地图上单独标注。" data-en="Tap a light on the map and the panel slides in from the right with every landscape of that city; or pick any one from the menu. Chenggu belongs to Hanzhong and is marked separately.">点击地图上的光点，右侧会滑出这座城的全部风景；也可以直接用右上角的下拉菜单跳到任意一处。城固县隶属汉中市，在地图上单独标注。</p>
+      </div>
+      <div class="map-container">
+        <div class="map-wrap" id="mapWrap">
+          <div class="shaanxi-map" id="shaanxiMap">
+            <span class="map-caption">SHAANXI PROVINCE · CITY INDEX</span>
+            <div class="map-legend"><i></i><span data-zh="点击坐标 · 展开这座城" data-en="SELECT A CITY">点击坐标 · 展开这座城</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-picker">
+        <select id="spotPicker" aria-label="选择一处风景"></select>
+      </div>
+      <div class="map-hint" data-zh="点击地图上的光点 · 右侧展开这座城的全部风景" data-en="TAP A LIGHT · THE PANEL SLIDES IN">点击地图上的光点 · 右侧展开这座城的全部风景</div>
+    </section>
+
+    <div class="detail-panel" id="detailPanel" aria-hidden="true">
+      <div class="dp-hero" id="dpHero"><img id="dpImg" src="" alt=""><button class="dp-close" id="dpClose" aria-label="关闭">&times;</button><div class="dp-hero-copy"><div class="dp-kicker" id="dpKicker"></div><h2 id="dpTitle"></h2><p class="dp-sub" id="dpSub"></p></div></div>
+      <div class="dp-body" id="dpBody"></div>
+    </div>
+
+    <section class="section section-sand" id="gallerySection">
+      <div class="container">
+        <div class="gallery-header reveal"><div><span class="eyebrow">02 / LANDSCAPE STORIES</span><h2 data-zh="风景合集" data-en="Landscape stories">风景合集</h2></div><p data-zh="点击照片放大观看，点击“阅读详情”进入完整故事。" data-en="Select a photograph to enlarge it, or read the full story.">点击照片放大观看，点击“阅读详情”进入完整故事。</p></div>
+        <div class="filter-bar" id="scenicFilters"></div>
+        <div class="gallery-result-bar"><span id="scenicCount"></span></div>
+        <div class="card-grid" id="scenicGrid"></div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="./vendor/ol/ol.js"></script><script src="./js/data.js"></script><script src="./js/common.js"></script><script src="./js/map.js"></script><script src="./js/scenic.js"></script>
+</body>
+</html>

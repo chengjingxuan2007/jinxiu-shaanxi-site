@@ -1,0 +1,33 @@
+.portal-body { overflow: hidden; background: var(--indigo); }
+.portal-page { position: relative; width: 100%; height: 100svh; min-height: 680px; overflow: hidden; color: var(--ivory); }
+.portal-video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .24; filter: saturate(.6); }
+.portal-shade { position: fixed; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(37,45,58,.18), rgba(26,32,41,.95) 78%), linear-gradient(90deg, rgba(37,45,58,.4), transparent, rgba(37,45,58,.4)); }
+.portal-orbit { position: absolute; top: 53%; left: 50%; width: min(70vw,950px); aspect-ratio: 1; border: 1px solid rgba(180,154,106,.12); border-radius: 50%; transform: translate(-50%,-50%) rotateX(68deg); box-shadow: 0 0 0 70px rgba(180,154,106,.015), 0 0 0 140px rgba(180,154,106,.01); }
+.portal-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; }
+.portal-title { padding: 108px 24px 0; text-align: center; }
+.portal-title .eyebrow { margin-bottom: 10px; color: var(--gold); }
+.portal-title .eyebrow::before { display: none; }
+.portal-title h1 { font-family: var(--serif); font-size: clamp(30px,3.4vw,48px); font-weight: 500; letter-spacing: .12em; }
+.portal-title p { margin-top: 8px; color: rgba(244,239,229,.46); font-size: 11px; letter-spacing: .08em; }
+.carousel-wrap { position: relative; flex: 1; min-height: 0; perspective: 1300px; }
+.carousel { position: absolute; inset: 0; transform-style: preserve-3d; touch-action: pan-y; cursor: grab; }
+.carousel:active { cursor: grabbing; }
+.carousel-card { position: absolute; top: 50%; left: 50%; will-change: transform,opacity; cursor: pointer; }
+.card-inner { width: 224px; overflow: hidden; border: 1px solid rgba(180,154,106,.2); background: rgba(244,239,229,.05); box-shadow: 0 24px 60px rgba(0,0,0,.28); backdrop-filter: blur(12px); transition: border-color .4s,box-shadow .4s; }
+.carousel-card.active .card-inner { border-color: rgba(180,154,106,.75); box-shadow: 0 30px 80px rgba(0,0,0,.42),0 0 50px rgba(180,154,106,.1); }
+.card-img { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+.card-shade { position: absolute; inset: 0; background: linear-gradient(0deg,rgba(27,33,42,.97),rgba(27,33,42,.1) 65%); }
+.card-no { position: absolute; top: 14px; left: 15px; color: var(--gold); font-family: var(--latin); font-size: 12px; letter-spacing: .16em; }
+.card-tag { position: absolute; top: 13px; right: 13px; padding: 2px 8px; border: 1px solid rgba(244,239,229,.32); color: rgba(244,239,229,.75); font-size: 9px; letter-spacing: .12em; }
+.card-text { position: absolute; right: 20px; bottom: 22px; left: 20px; }
+.card-text .subtitle { color: var(--gold); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+.card-text h3 { margin: 6px 0 12px; font-family: var(--serif); font-size: 25px; font-weight: 500; letter-spacing: .08em; }
+.card-hint { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid rgba(180,154,106,.25); color: rgba(244,239,229,.55); font-size: 9px; letter-spacing: .12em; }
+.portal-controls { padding-bottom: 26px; text-align: center; }
+.indicators { display: flex; justify-content: center; gap: 10px; }
+.indicators button { width: 18px; height: 2px; border: 0; background: rgba(244,239,229,.2); cursor: pointer; transition: .3s; }
+.indicators button.active { width: 42px; background: var(--gold); }
+.drag-hint { display: block; margin-top: 13px; color: rgba(244,239,229,.3); font-family: var(--latin); font-size: 9px; letter-spacing: .18em; }
+@media(max-width:700px){.portal-title{padding-top:92px}.portal-title h1{font-size:28px}.card-inner{width:180px}.portal-orbit{width:120vw}.portal-title p{font-size:10px}.portal-controls{padding-bottom:20px}}
+@media(max-height:740px){.portal-title{padding-top:88px}.portal-title .eyebrow{display:none}.portal-title h1{font-size:28px}.card-inner{width:178px}.portal-controls{padding-bottom:14px}}
