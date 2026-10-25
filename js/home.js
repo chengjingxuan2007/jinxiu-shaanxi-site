@@ -41,7 +41,7 @@
     /* 城市缩影地图：天地图真实底图，光点可直接跳转到对应城市 */
     const mapBox = document.getElementById('homeMap');
     if (mapBox && window.SX_MAP) {
-      const atlas = window.SX_MAP.create(mapBox, { interactive: false });
+      const atlas = window.SX_MAP.create(mapBox, { interactive: false, mask: true, bare: true });
       if (atlas) {
         const draw = () => {
           atlas.clearMarkers();

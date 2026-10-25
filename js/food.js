@@ -39,7 +39,7 @@
   function renderMap() {
     const stage = document.getElementById('foodMap');
     if (!stage || !window.SX_MAP) return;
-    if (!atlas) atlas = window.SX_MAP.create(stage, { wheel: false });
+    if (!atlas) atlas = window.SX_MAP.create(stage, { interactive: false, mask: true, maskColor: 'rgba(38,52,47,1)' });
     if (!atlas) return;
     atlas.clearMarkers();
     D.cities.forEach(city => {

@@ -18,6 +18,8 @@
     layer: 'vec',
     /* 陕西省外接矩形（经纬度）：西、南、东、北 */
     bounds: [105.35, 31.55, 111.35, 39.75],
+    /* 省外遮罩颜色，与首页深色板块背景一致 */
+    maskColor: 'rgba(37,45,58,1)',
     minZoom: 5.5,
     maxZoom: 16
   };
@@ -78,16 +80,60 @@
     return { layers: layers, fallback: !hasToken };
   }
 
+  /* 用省界把陕西省以外的区域遮住，让陕西轮廓突出（首页缩影图用） */
+  function addProvinceMask(map, color) {
+    const rings = window.SX_SHAANXI_BOUNDARY;
+    if (!rings || !rings.length) return;
+
+    const world = [[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]];
+
+    function signedArea(ring) {
+      let sum = 0;
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        sum += ring[j][0] * ring[i][1] - ring[i][0] * ring[j][1];
+      }
+      return sum;
+    }
+
+    const worldSign = signedArea(world);
+    const holes = rings.map(function (ring) {
+      const hole = ring.map(function (p) { return [p[0], p[1]]; });
+      /* 洞的绕向要与外环相反，否则挖不出来 */
+      if (signedArea(hole) * worldSign > 0) hole.reverse();
+      return hole;
+    });
+
+    const maskGeom = new ol.geom.Polygon([world].concat(holes))
+      .transform('EPSG:4326', 'EPSG:3857');
+    map.addLayer(new ol.layer.Vector({
+      source: new ol.source.Vector({ features: [new ol.Feature(maskGeom)] }),
+      style: new ol.style.Style({ fill: new ol.style.Fill({ color: color }) }),
+      zIndex: 20
+    }));
+
+    const outlineGeom = new ol.geom.MultiPolygon(holes.map(function (hole) { return [hole]; }))
+      .transform('EPSG:4326', 'EPSG:3857');
+    map.addLayer(new ol.layer.Vector({
+      source: new ol.source.Vector({ features: [new ol.Feature(outlineGeom)] }),
+      style: new ol.style.Style({
+        fill: null,
+        stroke: new ol.style.Stroke({ color: 'rgba(180,154,106,.85)', width: 1.2 })
+      }),
+      zIndex: 21
+    }));
+  }
+
   /**
    * 在指定容器里创建一张真实地图
    * @param {HTMLElement} container 地图容器
-   * @param {Object} options { interactive: 关闭拖拽, wheel: 关闭滚轮缩放, padding: 视图留白 }
+   * @param {Object} options { mask: 遮住省外区域, bare: 去掉地图框底与投影, interactive: 关闭拖拽/缩放, padding: 视图留白 }
    * @returns {Object|null} { map, addMarker, clearMarkers, fit, fallback }
    */
   function create(container, options) {
     if (!container || !window.ol) return null;
     const opt = options || {};
     container.classList.add('real-map');
+    if (opt.bare) container.classList.add('is-bare');
 
     /* 地图单独占一层，容器里原有的标题、图例、版权文字保持不动 */
     let canvas = container.querySelector('.map-canvas');
@@ -129,6 +175,8 @@
     const extent = ol.proj.transformExtent(CONFIG.bounds, 'EPSG:4326', 'EPSG:3857');
     map.updateSize();
     view.fit(extent, { padding: opt.padding || [0, 0, 0, 0], duration: 0 });
+
+    if (opt.mask) addProvinceMask(map, opt.maskColor || CONFIG.maskColor);
 
     /* 版权信息：天地图要求标注来源 */
     const credit = document.createElement('span');
@@ -212,50 +260,6 @@
       map.updateSize();
       view.fit(extent, { padding: opt.padding || [0, 0, 0, 0], duration: 0 });
     }
-
-    /* ---------- 缩放 / 方向盘控件 ---------- */
-    function panBy(ratioX, ratioY) {
-      const size = map.getSize();
-      const centerPx = map.getPixelFromCoordinate(view.getCenter());
-      view.animate({
-        center: map.getCoordinateFromPixel([centerPx[0] + size[0] * ratioX, centerPx[1] + size[1] * ratioY]),
-        duration: 300
-      });
-    }
-
-    function bindControls() {
-      const zoomBox = document.createElement('div');
-      zoomBox.className = 'map-ctl map-ctl-zoom';
-      zoomBox.innerHTML =
-        '<button type="button" data-act="zoom-in" aria-label="放大">+</button>' +
-        '<button type="button" data-act="zoom-out" aria-label="缩小">−</button>';
-
-      const panBox = document.createElement('div');
-      panBox.className = 'map-ctl map-ctl-pan';
-      panBox.innerHTML =
-        '<button type="button" class="pan-up" data-act="pan-up" aria-label="向上">↑</button>' +
-        '<button type="button" class="pan-left" data-act="pan-left" aria-label="向左">←</button>' +
-        '<button type="button" class="pan-down" data-act="pan-down" aria-label="向下">↓</button>' +
-        '<button type="button" class="pan-right" data-act="pan-right" aria-label="向右">→</button>';
-
-      container.appendChild(zoomBox);
-      container.appendChild(panBox);
-
-      container.addEventListener('click', function (e) {
-        const btn = e.target.closest ? e.target.closest('.map-ctl button') : null;
-        if (!btn) return;
-        e.stopPropagation();
-        const act = btn.dataset.act;
-        if (act === 'zoom-in') view.animate({ zoom: Math.min(CONFIG.maxZoom, view.getZoom() + 1), duration: 260 });
-        else if (act === 'zoom-out') view.animate({ zoom: Math.max(CONFIG.minZoom, view.getZoom() - 1), duration: 260 });
-        else if (act === 'pan-up') panBy(0, -0.32);
-        else if (act === 'pan-down') panBy(0, 0.32);
-        else if (act === 'pan-left') panBy(-0.32, 0);
-        else if (act === 'pan-right') panBy(0.32, 0);
-      });
-    }
-
-    if (opt.interactive !== false) bindControls();
 
     window.addEventListener('resize', () => map.updateSize());
 
