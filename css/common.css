@@ -434,7 +434,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .dp-kicker { display: flex; flex-wrap: wrap; gap: 12px; color: var(--gold); font-family: var(--latin); font-size: 10px; letter-spacing: .18em; }
 .dp-hero-copy h2 { margin: 8px 0 6px; color: var(--ivory); font-family: var(--serif); font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: .06em; line-height: 1.2; }
 .dp-sub { color: rgba(244,239,229,.72); font-size: 11px; letter-spacing: .1em; }
-.dp-source { position: absolute; z-index: 3; right: 14px; bottom: 10px; padding: 3px 9px; border-radius: 3px; background: rgba(0,0,0,.42); color: rgba(255,255,255,.82); font-size: 10px; letter-spacing: .04em; line-height: 1.4; backdrop-filter: blur(2px); }
+.dp-source { position: absolute; z-index: 3; right: 14px; bottom: 10px; padding: 3px 0; color: rgba(255,255,255,.55); font-size: 10px; letter-spacing: .04em; line-height: 1.4; }
 .dp-body { flex: 1; padding: 32px 38px 46px; overflow-y: auto; }
 .dp-desc { color: var(--ink); font-size: 13.5px; line-height: 2.05; }
 .dp-desc + .dp-desc { margin-top: 14px; }
