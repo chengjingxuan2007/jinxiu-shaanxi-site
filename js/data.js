@@ -367,6 +367,7 @@ window.SX_DATA = (function () {
     {
       id: 'culture-24', n: 24, name: '汉调二黄', nameEn: 'Handiao Erhuang Opera', city: '安康', cityId: 'ankang', location: '汉水流域', locationEn: 'Han River Valley',
       img: './image/culture24.jpg',
+      source: '抖音 嘁嘁 46345224585',
       desc: '汉调二黄，又称陕二黄、山二黄，是根植于陕南汉水流域的古老地方戏曲，也是陕西第二大剧种、京剧声腔重要源头之一。它起源于汉江两岸的山野民歌、田间小调与劳动号子，历经百年演变，融合秦腔高亢、昆曲婉转的唱腔特色，结合陕南方言自成一派。因旧时戏班以双竹笛配簧伴奏，故称“二黄”。其唱腔分为西皮、二黄两大声腔，曲调刚柔并济，既可高亢苍劲、诉说家国大义，亦可婉转轻柔、演绎市井人情。',
       descEn: 'The second major opera of Shaanxi and one of the sources of Peking opera’s vocal style. Grown from riverbank work songs and field tunes, it blends Qinqiang force with Kunqu smoothness, and divides into xipi and erhuang modes.'
     },
