@@ -169,6 +169,13 @@
 
     el.img.src = dish.img;
     el.img.alt = name;
+    /* 图片来源标注 */
+    const hero = document.getElementById('dpHero');
+    let srcEl = hero ? hero.querySelector('.dp-source') : null;
+    if (dish.source) {
+      if (!srcEl) { srcEl = document.createElement('span'); srcEl.className = 'dp-source'; if (hero) hero.appendChild(srcEl); }
+      srcEl.textContent = dish.source; srcEl.style.display = '';
+    } else if (srcEl) { srcEl.style.display = 'none'; }
     el.kicker.innerHTML = '<span>' + esc(EN() ? ((city && city.nameEn) || dish.city) : dish.city) + '</span><span>NO. ' + idx + ' / ' + D.foods.length + '</span>';
     el.title.textContent = name;
     el.sub.textContent = [EN() ? (dish.locationEn || dish.location || '') : (dish.location || ''), city ? (EN() ? city.nameEn : city.name) : dish.city].filter(Boolean).join(' · ');

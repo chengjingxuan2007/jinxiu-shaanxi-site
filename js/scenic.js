@@ -173,6 +173,13 @@
 
     el.img.src = spot.img;
     el.img.alt = name;
+    /* 图片来源标注 */
+    const hero = document.getElementById('dpHero');
+    let srcEl = hero ? hero.querySelector('.dp-source') : null;
+    if (spot.source) {
+      if (!srcEl) { srcEl = document.createElement('span'); srcEl.className = 'dp-source'; if (hero) hero.appendChild(srcEl); }
+      srcEl.textContent = spot.source; srcEl.style.display = '';
+    } else if (srcEl) { srcEl.style.display = 'none'; }
     el.kicker.innerHTML = '<span>' + esc(en() ? (city && city.nameEn) || spot.city : spot.city) + '</span><span>NO. ' + idx + ' / ' + D.spots.length + '</span>';
     el.title.textContent = name;
     el.sub.textContent = [en() ? (spot.locationEn || spot.location || '') : (spot.location || ''), spot.coord].filter(Boolean).join(' · ');

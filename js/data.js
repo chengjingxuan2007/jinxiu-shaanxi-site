@@ -163,6 +163,7 @@ window.SX_DATA = (function () {
     {
       id: 'scenic-15', n: 15, name: '凤堰古梯田', nameEn: 'Fengyan Ancient Terraces', city: '安康', cityId: 'ankang', location: '汉阴县', locationEn: 'Hanyin',
       img: './image/scenic15.jpg',
+      source: '抖音 北大荒 beidahuang9580',
       desc: '顺着秦巴山起伏延展的层层梯田，随山势蜿蜒错落，云雾时常漫上山坡。春有漫坡金花铺叠，秋有稻浪染遍山野，水田澄澈如镜，映着云天与山林，老屋隐于田垄之间，是藏在陕南山地的田园画卷。',
       descEn: 'Terraces following the rise and fall of the Qinba mountains, mist often drifting up the slopes. Rape flowers in spring, rice waves in autumn, paddies like mirrors, old houses hidden between the ridges.'
     },
@@ -305,6 +306,7 @@ window.SX_DATA = (function () {
     {
       id: 'culture-14', n: 14, name: '宝鸡民间社火', nameEn: 'Baoji Shehuo Festival', city: '宝鸡', cityId: 'baoji', location: '陇州一带', locationEn: 'Longzhou',
       img: './image/culture14.jpg',
+      source: '抖音 郑一 ZDGMYSBS',
       desc: '宝鸡民间社火是国家级非物质文化遗产，是西府地区流传千年的节庆游演民俗，尤以陇州社火最为出名。每逢新春佳节，高芯、背社火、脸谱巡游轮番上演，装扮者身着艳丽戏服，凭借精巧的造型装置凌空而立，场面恢弘热烈。社火脸谱是它最鲜明的符号，红表忠勇、黑显刚直，色彩浓烈夸张，一笔一画勾勒出神话与戏曲人物。',
       descEn: 'A thousand-year-old New Year procession, most famous at Longzhou. Costumed performers are lifted into the air on hidden frames; the painted faces are its signature — red for loyalty and courage, black for integrity, drawn in bold strokes.'
     },
@@ -561,6 +563,7 @@ window.SX_DATA = (function () {
     {
       id: 'food-25', n: 25, name: '汉阴炕炕馍', nameEn: 'Hanyin Griddle Sesame Cake', city: '安康', cityId: 'ankang', location: '汉阴县', locationEn: 'Hanyin',
       img: './image/food25.jpg',
+      source: '抖音 摄影师风逸 FotoFy',
       desc: '炕炕馍是汉阴传承百年的特色面点，也叫芝麻馍，相传最早是古时赶路之人便携的干粮。面团经反复揉擀，撒满饱满芝麻，放在鏊子上以炭火慢慢烘炕，两面烘烤至金黄。入口酥脆掉渣，麦香与芝麻香交融，分咸香、甜香两种口味，耐放不易坏。',
       descEn: 'A century-old travel bread, also called sesame cake. Dough rolled again and again, covered in sesame and baked slowly on a griddle over charcoal until golden on both sides — shatteringly crisp, in savoury and sweet versions, and it keeps.'
     },
@@ -800,10 +803,10 @@ window.SX_DATA = (function () {
   D.videos = {
     hero: './video/index.mp4',
     cartoons: [
-      { title: '漫剧', titleEn: 'Comic Drama', subtitle: '陕西非遗 · 漫剧演绎', subtitleEn: 'Heritage told as comic drama', src: './video/carton1.mp4', poster: './image/poster2.jpg' },
-      { title: '动画', titleEn: 'Animation', subtitle: '城固故事 · 动画短片', subtitleEn: 'Chenggu stories in animation', src: './video/carton2.mp4', poster: './image/poster5.jpg' }
+      { title: '漫剧', titleEn: 'Comic Drama', subtitle: '陕西非遗 · 漫剧演绎', subtitleEn: 'Heritage told as comic drama', src: './video/carton1.mp4', poster: './image/poster2.jpg', source: '视频来源 抖音 Kiki（59173708190）' },
+      { title: '动画', titleEn: 'Animation', subtitle: '城固故事 · 动画短片', subtitleEn: 'Chenggu stories in animation', src: './video/carton2.mp4', poster: './image/poster5.jpg', source: '视频来源 抖音 Kiki（59173708190）' }
     ],
-    film: { title: '锦绣陕西 · 形象片', titleEn: 'Splendid Shaanxi · Film', src: './video/poster7.mp4', poster: './image/poster3.jpg' }
+    film: { title: '锦绣陕西 · 形象片', titleEn: 'Splendid Shaanxi · Film', src: './video/poster7.mp4', poster: './image/poster3.jpg', source: '视频来源 抖音 光圈拾影 69730882431' }
   };
 
   return D;

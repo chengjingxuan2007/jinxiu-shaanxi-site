@@ -163,6 +163,13 @@
 
     el.img.src = craft.img;
     el.img.alt = name;
+    /* 图片来源标注 */
+    const hero = document.getElementById('dpHero');
+    let srcEl = hero ? hero.querySelector('.dp-source') : null;
+    if (craft.source) {
+      if (!srcEl) { srcEl = document.createElement('span'); srcEl.className = 'dp-source'; if (hero) hero.appendChild(srcEl); }
+      srcEl.textContent = craft.source; srcEl.style.display = '';
+    } else if (srcEl) { srcEl.style.display = 'none'; }
     el.kicker.innerHTML = '<span>' + esc(cityName(craft)) + '</span><span>NO. ' + idx + ' / ' + D.cultures.length + '</span>';
     el.title.textContent = name;
     el.sub.textContent = [craft.location, city ? (en() ? city.nameEn : city.name) : craft.city].filter(Boolean).join(' · ');
@@ -258,10 +265,12 @@
     /* 漫剧 + 动画：双列，卡片无文字标签 */
     grid.innerHTML = (D.videos.cartoons || []).map((film) => {
       const title = en ? film.titleEn : film.title;
+      const srcHtml = film.source ? '<span class="film-source">' + esc(film.source) + '</span>' : '';
       return '<button class="film-card" data-src="' + film.src + '" data-title="' + esc(title) + '">' +
         '<div class="film-frame">' +
           '<img src="' + film.poster + '" alt="' + esc(title) + '" loading="lazy">' +
           '<span class="film-play" aria-hidden="true"></span>' +
+          srcHtml +
         '</div></button>';
     }).join('');
 
@@ -274,10 +283,12 @@
     const single = document.getElementById('filmSingle');
     if (film && single) {
       const title = en ? film.titleEn : film.title;
+      const srcHtml = film.source ? '<span class="film-source">' + esc(film.source) + '</span>' : '';
       single.innerHTML = '<button class="film-card film-wide" data-src="' + film.src + '" data-title="' + esc(title) + '">' +
         '<div class="film-frame">' +
           '<img src="' + film.poster + '" alt="' + esc(title) + '" loading="lazy">' +
           '<span class="film-play" aria-hidden="true"></span>' +
+          srcHtml +
         '</div></button>';
       single.querySelectorAll('.film-card').forEach(card => {
         card.addEventListener('click', () => APP.openVideo(card.dataset.src, card.dataset.title));

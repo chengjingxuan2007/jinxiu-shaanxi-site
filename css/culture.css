@@ -24,6 +24,7 @@
 .film-wide { display: block; width: 100%; margin-top: 34px; }
 .film-wide .film-frame { aspect-ratio: 21 / 9; }
 .film-wide .film-label h3 { font-size: 30px; }
+.film-source { position: absolute; z-index: 3; right: 12px; bottom: 8px; padding: 3px 9px; border-radius: 3px; background: rgba(0,0,0,.42); color: rgba(255,255,255,.82); font-size: 10px; letter-spacing: .04em; line-height: 1.4; backdrop-filter: blur(2px); }
 
 /* ---------- 02 宣传海报 · 非对称网格 ---------- */
 .poster-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 30px; }
