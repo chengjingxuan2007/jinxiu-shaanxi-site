@@ -268,27 +268,6 @@
     grid.querySelectorAll('.film-card').forEach(card => {
       card.addEventListener('click', () => APP.openVideo(card.dataset.src, card.dataset.title));
     });
-
-    /* 形象片：整幅横幅 */
-    const film = D.videos.film;
-    if (film && !document.getElementById('filmWide')) {
-      const wide = document.createElement('button');
-      wide.className = 'film-card film-wide';
-      wide.id = 'filmWide';
-      wide.dataset.src = film.src;
-      wide.dataset.title = en ? film.titleEn : film.title;
-      wide.innerHTML = '<div class="film-frame">' +
-        '<img src="' + film.poster + '" alt="' + esc(en ? film.titleEn : film.title) + '" loading="lazy">' +
-        '<span class="film-play" aria-hidden="true"></span>' +
-        '<div class="film-label"><span>FILM 03</span><h3>' + esc(en ? film.titleEn : film.title) + '</h3>' +
-        '<p>' + (en ? 'The full-length image film' : '全片 · 点击放大播放') + '</p></div></div>';
-      wide.addEventListener('click', () => APP.openVideo(film.src, wide.dataset.title));
-      grid.parentNode.insertBefore(wide, grid.nextSibling);
-    } else if (film && document.getElementById('filmWide')) {
-      const wide = document.getElementById('filmWide');
-      wide.dataset.title = en ? film.titleEn : film.title;
-      wide.querySelector('h3').textContent = en ? film.titleEn : film.title;
-    }
   }
 
   /* ---------- 02 海报 ---------- */
