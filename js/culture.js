@@ -262,13 +262,16 @@
     if (!grid) return;
     const en = lang() === 'en';
 
-    /* 漫剧 + 动画：双列，卡片无文字标签 */
+    /* 漫剧 + 动画 + 皮影戏动画：倒品字形，卡片无文字标签 */
     grid.innerHTML = (D.videos.cartoons || []).map((film) => {
       const title = en ? film.titleEn : film.title;
       const srcHtml = film.source ? '<span class="film-source">' + esc(film.source) + '</span>' : '';
+      const cover = film.poster
+        ? '<img src="' + film.poster + '" alt="' + esc(title) + '" loading="lazy">'
+        : '<video src="' + film.src + '" muted playsinline preload="metadata"></video>';
       return '<button class="film-card" data-src="' + film.src + '" data-title="' + esc(title) + '">' +
         '<div class="film-frame">' +
-          '<img src="' + film.poster + '" alt="' + esc(title) + '" loading="lazy">' +
+          cover +
           '<span class="film-play" aria-hidden="true"></span>' +
           srcHtml +
         '</div></button>';

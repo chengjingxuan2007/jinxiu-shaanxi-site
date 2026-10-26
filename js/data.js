@@ -805,7 +805,8 @@ window.SX_DATA = (function () {
     hero: './video/index.mp4',
     cartoons: [
       { title: '漫剧', titleEn: 'Comic Drama', subtitle: '陕西非遗 · 漫剧演绎', subtitleEn: 'Heritage told as comic drama', src: './video/carton1.mp4', poster: './image/poster2.jpg', source: '视频来源 抖音 Kiki（59173708190）' },
-      { title: '动画', titleEn: 'Animation', subtitle: '城固故事 · 动画短片', subtitleEn: 'Chenggu stories in animation', src: './video/carton2.mp4', poster: './image/poster5.jpg', source: '视频来源 抖音 Kiki（59173708190）' }
+      { title: '动画', titleEn: 'Animation', subtitle: '城固故事 · 动画短片', subtitleEn: 'Chenggu stories in animation', src: './video/carton2.mp4', poster: './image/poster5.jpg', source: '视频来源 抖音 Kiki（59173708190）' },
+      { title: '皮影戏动画', titleEn: 'Shadow Puppetry Animation', subtitle: '城固皮影 · 灯影流转', subtitleEn: 'Chenggu shadow puppetry in motion', src: './video/shadow.mp4', poster: '' }
     ],
     film: { title: '锦绣陕西 · 形象片', titleEn: 'Splendid Shaanxi · Film', src: './video/poster7.mp4', poster: './image/poster3.jpg', source: '视频来源 抖音 光圈拾影 69730882431' }
   };
