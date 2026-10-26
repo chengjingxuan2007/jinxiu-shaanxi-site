@@ -254,20 +254,35 @@
     const grid = document.getElementById('filmGrid');
     if (!grid) return;
     const en = lang() === 'en';
-    grid.innerHTML = (D.videos.cartoons || []).map((film, i) => {
+
+    /* 漫剧 + 动画：双列，卡片无文字标签 */
+    grid.innerHTML = (D.videos.cartoons || []).map((film) => {
       const title = en ? film.titleEn : film.title;
       return '<button class="film-card" data-src="' + film.src + '" data-title="' + esc(title) + '">' +
         '<div class="film-frame">' +
           '<img src="' + film.poster + '" alt="' + esc(title) + '" loading="lazy">' +
           '<span class="film-play" aria-hidden="true"></span>' +
-          '<div class="film-label"><span>FILM ' + String(i + 1).padStart(2, '0') + '</span>' +
-          '<h3>' + esc(title) + '</h3><p>' + esc(en ? film.subtitleEn : film.subtitle) + '</p></div>' +
         '</div></button>';
     }).join('');
 
     grid.querySelectorAll('.film-card').forEach(card => {
       card.addEventListener('click', () => APP.openVideo(card.dataset.src, card.dataset.title));
     });
+
+    /* 锦绣陕西 · 形象片：单张全宽卡片，无文字标签 */
+    const film = D.videos.film;
+    const single = document.getElementById('filmSingle');
+    if (film && single) {
+      const title = en ? film.titleEn : film.title;
+      single.innerHTML = '<button class="film-card film-wide" data-src="' + film.src + '" data-title="' + esc(title) + '">' +
+        '<div class="film-frame">' +
+          '<img src="' + film.poster + '" alt="' + esc(title) + '" loading="lazy">' +
+          '<span class="film-play" aria-hidden="true"></span>' +
+        '</div></button>';
+      single.querySelectorAll('.film-card').forEach(card => {
+        card.addEventListener('click', () => APP.openVideo(card.dataset.src, card.dataset.title));
+      });
+    }
   }
 
   /* ---------- 02 海报 ---------- */

@@ -801,9 +801,9 @@ window.SX_DATA = (function () {
     hero: './video/index.mp4',
     cartoons: [
       { title: '漫剧', titleEn: 'Comic Drama', subtitle: '陕西非遗 · 漫剧演绎', subtitleEn: 'Heritage told as comic drama', src: './video/carton1.mp4', poster: './image/poster2.jpg' },
-      { title: '动画', titleEn: 'Animation', subtitle: '城固故事 · 动画短片', subtitleEn: 'Chenggu stories in animation', src: './video/carton2.mp4', poster: './image/poster5.jpg' },
-      { title: '锦绣陕西 · 形象片', titleEn: 'Splendid Shaanxi · Film', subtitle: '全片 · 点击放大播放', subtitleEn: 'The full-length image film', src: './video/poster7.mp4', poster: './image/poster3.jpg' }
-    ]
+      { title: '动画', titleEn: 'Animation', subtitle: '城固故事 · 动画短片', subtitleEn: 'Chenggu stories in animation', src: './video/carton2.mp4', poster: './image/poster5.jpg' }
+    ],
+    film: { title: '锦绣陕西 · 形象片', titleEn: 'Splendid Shaanxi · Film', src: './video/poster7.mp4', poster: './image/poster3.jpg' }
   };
 
   return D;
