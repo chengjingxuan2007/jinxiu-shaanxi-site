@@ -33,16 +33,18 @@
 - 原生 HTML + CSS + JavaScript 静态站点，无框架、无构建步骤
 - [OpenLayers 10](https://openlayers.org/)（本地 `vendor/ol/`，不依赖 CDN）
 - 天地图瓦片服务（需联网；密钥在 `js/map.js`）
-- 登录 / 注册对接 Django 后端（`../锦绣陕西后端/jiuxiu_shannxi`，MySQL + JWT）
+- 登录 / 注册对接 Django 后端（`backend/jiuxiu_shannxi`，MySQL + JWT）
 
 ## 四、本地运行
 
 1. 先启动后端（提供登录、注册接口）：
 
 ```bash
-cd 锦绣陕西后端/jiuxiu_shannxi
+cd backend/jiuxiu_shannxi
 python manage.py runserver 127.0.0.1:8000
 ```
+
+> 数据库口令通过环境变量 `SX_DB_PASSWORD` 传入，仓库中不保存明文密码。
 
 2. 再启动前端静态服务（推荐，避免个别浏览器对本地文件的限制）：
 
@@ -61,6 +63,7 @@ python -m http.server 8140
 ├─ css/          common.css 全站通用；其余按页面拆分
 ├─ js/           data.js（内容仓库）、map.js（地图模块）、auth.js（登录注册）、其余按页面拆分
 ├─ vendor/       ol/（OpenLayers 库）、geo/（陕西省行政边界数据）
+├─ backend/      Django 后端（jiuxiu_shannxi：登录 / 注册接口，MySQL + JWT）
 ├─ image/        图片素材
 ├─ video/        视频素材
 └─ 使用教程.txt   面向非技术同学的操作说明
