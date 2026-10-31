@@ -3,105 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="锦绣陕西——从陕北高原到秦巴山水，阅读陕西的风景、民俗与味道。">
-  <title>锦绣陕西 · Splendid Shaanxi</title>
-  <link rel="stylesheet" href="./vendor/ol/ol.css">
+  <meta name="description" content="锦绣陕西——登录后继续阅读陕西的风景、民俗与味道。">
+  <title>登录 · 锦绣陕西</title>
   <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/auth.css">
 </head>
-<body class="home-page">
-  <div id="site-nav"></div>
-
-  <main>
-    <section class="home-hero" id="homeHero">
-      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="./image/hero-poster.jpg">
-        <source src="./video/index.mp4" type="video/mp4">
-      </video>
-      <div class="hero-shade"></div><div class="hero-grain"></div>
-      <div class="container home-hero-content">
-        <div class="hero-overline">SHAANXI · CHINA</div>
+<body class="auth-page">
+  <div class="auth-shell">
+    <aside class="auth-visual">
+      <img src="./image/hero-poster.jpg" alt="陕西山河">
+      <div class="auth-visual-inner">
+        <span class="eyebrow">SHAANXI · CHINA</span>
         <h1>锦绣陕西</h1>
-        <div class="hero-title-en">Splendid Shaanxi</div>
-        <p class="hero-summary" data-zh="从黄土高原的辽阔，到秦岭山水的深邃；从周秦汉唐的文明回响，到市井街巷的温热日常。这里，每一步都是历史，每一眼皆为山河。" data-en="From the open loess plateau to the depths of the Qinling Mountains, from the echoes of ancient dynasties to the warmth of everyday streets—every step reveals a story.">从黄土高原的辽阔，到秦岭山水的深邃；从周秦汉唐的文明回响，到市井街巷的温热日常。这里，每一步都是历史，每一眼皆为山河。</p>
-        <div class="hero-actions">
-          <a class="btn" href="./portal.html"><span data-zh="开启陕西之旅" data-en="Begin the journey">开启陕西之旅</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-          <button class="hero-sound" id="soundToggle"><span class="sound-bars"><i></i><i></i><i></i></span><span data-zh="聆听山河" data-en="Sound on">聆听山河</span></button>
-        </div>
+        <div class="auth-visual-en">Splendid Shaanxi</div>
+        <p class="auth-visual-note">从黄土高原的辽阔，到秦岭山水的深邃；从周秦汉唐的文明回响，到市井街巷的温热日常。</p>
       </div>
-      <div class="hero-side-note">34.34° N · 108.94° E</div>
-      <div class="scroll-cue"><span>SCROLL</span><i></i></div>
-    </section>
+    </aside>
 
-    <section class="section home-manifesto">
-      <div class="container manifesto-grid">
-        <div class="manifesto-side reveal"><span class="eyebrow">THE LAND & ITS MEMORY</span><span class="manifesto-number">01</span></div>
-        <div class="manifesto-copy reveal reveal-delay-1">
-          <h2 data-zh="一部由山河写就的文明长卷" data-en="A civilisation written by mountains and rivers">一部由山河写就的文明长卷</h2>
-          <p data-zh="陕西，地处中国地理版图的心脏。北枕毛乌素，南依秦巴山，黄河与汉江在这里留下截然不同的自然表情。十座城市、三种地貌、千年文脉，共同构成一部可以行走、可以观看、也可以细细品读的文化图志。" data-en="At the heart of China, Shaanxi holds striking contrasts: desert and forest, the Yellow River and the Han River, imperial capitals and quiet villages. Ten cities and three landforms form a living atlas to explore.">陕西，地处中国地理版图的心脏。北枕毛乌素，南依秦巴山，黄河与汉江在这里留下截然不同的自然表情。十座城市、三种地貌、千年文脉，共同构成一部可以行走、可以观看、也可以细细品读的文化图志。</p>
-          <div class="home-stats">
-            <div class="home-stat"><strong>10<sup data-zh="座" data-en="cities">座</sup></strong><p data-zh="城市文化索引" data-en="CITY INDEX">城市文化索引</p></div>
-            <div class="home-stat"><strong>3000<sup>+</sup></strong><p data-zh="年文明绵延" data-en="YEARS OF HISTORY">年文明绵延</p></div>
-            <div class="home-stat"><strong>85<sup data-zh="则" data-en="stories">则</sup></strong><p data-zh="风景与人文故事" data-en="CURATED STORIES">风景与人文故事</p></div>
-          </div>
-        </div>
+    <main class="auth-panel">
+      <div class="auth-card">
+        <a class="auth-brand" href="./index.html">
+          <span class="seal">秦</span>
+          <span><span class="name">锦绣陕西</span><span class="en">Splendid Shaanxi</span></span>
+        </a>
+
+        <h2 class="auth-title">欢迎回来</h2>
+        <p class="auth-sub">登录后，继续阅读这片土地的风景、民俗与味道。</p>
+
+        <form id="authForm" data-mode="login" novalidate>
+          <label class="auth-field" data-field="username">
+            <span>用户名</span>
+            <input type="text" name="username" autocomplete="username" placeholder="请输入用户名" maxlength="50">
+          </label>
+
+          <label class="auth-field" data-field="password">
+            <span>密码</span>
+            <input type="password" name="password" autocomplete="current-password" placeholder="请输入不少于 8 位密码">
+            <em class="hint">密码不少于 8 位</em>
+          </label>
+
+          <p class="auth-error" id="authError" role="alert"></p>
+
+          <button class="auth-submit" type="submit">登 录</button>
+        </form>
+
+        <div class="auth-divider"><span>或</span></div>
+
+        <button class="auth-guest" id="guestBtn" type="button">游客模式进入</button>
+
+        <p class="auth-switch">还没有账号？<a href="./register.html">立即注册</a></p>
+        <p class="auth-foot">© 2026 锦绣陕西 · 陕西文化数字图志</p>
       </div>
-    </section>
-
-    <section class="section section-sand">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div><span class="eyebrow">THREE WAYS INTO SHAANXI</span><h2 class="section-title" data-zh="看见山河，听见人间" data-en="Landscapes, living culture, local flavour">看见山河，听见人间</h2></div>
-          <p class="section-intro" data-zh="自然塑造陕西的轮廓，人文赋予它厚度，而食物保存着最亲切的地方记忆。沿着三条线索，进入这片土地。" data-en="Nature gives Shaanxi its form, culture its depth, and food its most intimate memories. Follow three paths into the land.">自然塑造陕西的轮廓，人文赋予它厚度，而食物保存着最亲切的地方记忆。沿着三条线索，进入这片土地。</p>
-        </div>
-        <div class="chapter-grid">
-          <a class="chapter-card reveal" href="./scenic.html"><img src="./image/scenic9.jpg" alt="华山"><span class="chapter-arrow">↗</span><div class="chapter-card-content"><span class="chapter-no">01 / LANDSCAPES</span><h3 data-zh="特色风景" data-en="Landscapes">特色风景</h3><p data-zh="从大漠边关到秦巴秘境，行走三种地貌。" data-en="From desert frontiers to the Qinling wilderness.">从大漠边关到秦巴秘境，行走三种地貌。</p></div></a>
-          <a class="chapter-card reveal reveal-delay-1" href="./culture.html"><img src="./image/culture10.jpg" alt="华州皮影"><span class="chapter-arrow">↗</span><div class="chapter-card-content"><span class="chapter-no">02 / LIVING CULTURE</span><h3 data-zh="民俗文化" data-en="Living culture">民俗文化</h3><p data-zh="古老技艺，仍在当代生活中呼吸。" data-en="Ancient crafts, alive in the present.">古老技艺，仍在当代生活中呼吸。</p></div></a>
-          <a class="chapter-card reveal reveal-delay-2" href="./food.html"><img src="./image/card3.jpg" alt="陕西特色美食"><span class="chapter-arrow">↗</span><div class="chapter-card-content"><span class="chapter-no">03 / LOCAL FLAVOURS</span><h3 data-zh="特色美食" data-en="Local flavours">特色美食</h3><p data-zh="一城一味，品尝最真实的风土。" data-en="One city, one taste; a true sense of place.">一城一味，品尝最真实的风土。</p></div></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="cinema-section">
-      <div class="cinema-bg" id="cinemaBg"></div>
-      <div class="container cinema-content reveal">
-        <span class="eyebrow">QINLING MOUNTAINS</span>
-        <h2 class="cinema-quote" data-zh="一座秦岭，半部中国自然史。" data-en="One mountain range. A world of natural history.">一座秦岭，半部中国自然史。</h2>
-        <p data-zh="它划分南北，也连接万物。云海、森林、古道与珍稀生灵，共同守护着中国中央山脉的生态密码。" data-en="It divides north from south and connects countless lives. Cloud forests, ancient trails and rare species hold the ecological memory of China’s central mountains.">它划分南北，也连接万物。云海、森林、古道与珍稀生灵，共同守护着中国中央山脉的生态密码。</p>
-        <a class="btn btn-light" href="./scenic.html?detail=scenic-13"><span data-zh="走进秦岭" data-en="Enter Qinling">走进秦岭</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="cinema-caption">秦岭云海 · QINLING CLOUD SEA</div>
-    </section>
-
-    <section class="section section-dark">
-      <div class="container map-teaser-grid">
-        <div class="map-teaser-copy reveal"><span class="eyebrow">A JOURNEY THROUGH TEN CITIES</span><h2 class="section-title" data-zh="循着城市，读懂陕西" data-en="Read Shaanxi through its cities">循着城市，读懂陕西</h2><p data-zh="点击城市，不只是抵达一个地点。每一处坐标，都连接着当地的风景、民俗与日常味道。" data-en="A city is more than a destination. Every coordinate opens a connected story of landscapes, traditions and everyday flavours.">点击城市，不只是抵达一个地点。每一处坐标，都连接着当地的风景、民俗与日常味道。</p>
-          <div class="city-list"><a href="./scenic.html?city=榆林">榆林</a><a href="./scenic.html?city=延安">延安</a><a href="./scenic.html?city=咸阳">咸阳</a><a href="./scenic.html?city=铜川">铜川</a><a href="./scenic.html?city=渭南">渭南</a><a href="./scenic.html?city=宝鸡">宝鸡</a><a href="./scenic.html?city=西安">西安</a><a href="./scenic.html?city=商洛">商洛</a><a href="./scenic.html?city=汉中">汉中</a><a href="./scenic.html?city=安康">安康</a><a href="./scenic.html?city=城固">城固</a></div>
-          <a class="btn btn-light" href="./scenic.html#mapSection"><span data-zh="打开城市地图" data-en="Open the atlas">打开城市地图</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-        </div>
-        <div class="mini-map reveal reveal-delay-1">
-          <div id="homeMap"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="portal-banner">
-      <div class="container portal-banner-inner">
-        <div class="reveal"><span class="eyebrow">THE SHAANXI COLLECTION</span><h2 data-zh="让下一程，从一张卡片开始" data-en="Let your next journey begin with a card">让下一程，从一张卡片开始</h2><p data-zh="旋转、停留、选择。以一座微缩的数字展厅，收藏陕西最具代表性的文化切片。" data-en="Rotate, pause and choose. A miniature digital gallery of Shaanxi’s defining stories.">旋转、停留、选择。以一座微缩的数字展厅，收藏陕西最具代表性的文化切片。</p><a class="btn" href="./portal.html"><span data-zh="进入旋转展厅" data-en="Enter the gallery">进入旋转展厅</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
-        <div class="portal-fan reveal reveal-delay-1"><a class="fan-card" href="./scenic.html"><img src="./image/card1.jpg" alt="安康瀛湖"></a><a class="fan-card" href="./culture.html"><img src="./image/card4.jpg" alt="陕西皮影"></a><a class="fan-card" href="./food.html"><img src="./image/card3.jpg" alt="陕西美食"></a><a class="fan-card" href="./scenic.html?city=西安"><img src="./image/card2.jpg" alt="大雁塔文创"></a></div>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
-  <div class="language-gate" id="languageGate" role="dialog" aria-modal="true" aria-label="Language selection">
-    <div class="language-panel"><div class="language-symbol">秦</div><h2>锦绣陕西</h2><p>CHOOSE YOUR LANGUAGE · 选择浏览语言</p><div class="language-options"><button class="language-option" data-lang="zh"><strong>中文</strong><small>进入山河长卷</small></button><button class="language-option" data-lang="en"><strong>English</strong><small>Explore Shaanxi</small></button></div></div>
+    </main>
   </div>
 
-  <script src="./vendor/ol/ol.js"></script>
-  <script src="./vendor/geo/shaanxi.js"></script>
-  <script src="./js/data.js"></script>
-  <script src="./js/common.js"></script>
-  <script src="./js/map.js"></script>
-  <script src="./js/home.js"></script>
+  <div class="auth-toast" id="authToast" role="status"></div>
+  <script src="./js/auth.js"></script>
 </body>
 </html>
