@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="注册锦绣陕西账号，收藏属于你的陕西文化图志。">
+  <title>注册 · 锦绣陕西</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body class="auth-page">
+  <div class="auth-shell">
+    <aside class="auth-visual">
+      <img src="./image/culture10.jpg" alt="陕西民俗文化">
+      <div class="auth-visual-inner">
+        <span class="eyebrow">THE SHAANXI COLLECTION</span>
+        <h1>锦绣陕西</h1>
+        <div class="auth-visual-en">Splendid Shaanxi</div>
+        <p class="auth-visual-note">注册一个账号，把十座城市、八十五则风景与人文故事，收进自己的行囊。</p>
+      </div>
+    </aside>
+
+    <main class="auth-panel">
+      <div class="auth-card">
+        <a class="auth-brand" href="./index.html">
+          <span class="seal">秦</span>
+          <span><span class="name">锦绣陕西</span><span class="en">Splendid Shaanxi</span></span>
+        </a>
+
+        <h2 class="auth-title">创建账号</h2>
+        <p class="auth-sub">设置用户名与密码，即可开始记录你的陕西足迹。</p>
+
+        <form id="authForm" data-mode="register" novalidate>
+          <label class="auth-field" data-field="username">
+            <span>用户名</span>
+            <input type="text" name="username" autocomplete="username" placeholder="请输入用户名" maxlength="50">
+          </label>
+
+          <label class="auth-field" data-field="password">
+            <span>密码</span>
+            <input type="password" name="password" autocomplete="new-password" placeholder="请输入不少于 8 位密码">
+            <em class="hint">密码不少于 8 位</em>
+          </label>
+
+          <p class="auth-error" id="authError" role="alert"></p>
+
+          <button class="auth-submit" type="submit">注 册</button>
+        </form>
+
+        <p class="auth-switch">已有账号？<a href="./index.html">返回登录</a></p>
+        <p class="auth-foot">© 2026 锦绣陕西 · 陕西文化数字图志</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="auth-toast" id="authToast" role="status"></div>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

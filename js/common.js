@@ -62,7 +62,8 @@
   }
 
   function currentPage() {
-    return location.pathname.split('/').pop().replace('.html', '') || 'index';
+    const page = location.pathname.split('/').pop().replace('.html', '') || 'index';
+    return page === 'main' ? 'index' : page;
   }
 
   /* 顶部下拉菜单：按城市把这一页的全部条目列出来，一个都不漏 */
@@ -125,13 +126,13 @@
     if (!mount) return;
     const page = currentPage();
     const links = [
-      ['index', 'home', './index.html'], ['portal', 'portal', './portal.html'],
+      ['index', 'home', './main.html'], ['portal', 'portal', './portal.html'],
       ['scenic', 'scenic', './scenic.html'], ['culture', 'culture', './culture.html'], ['food', 'food', './food.html']
     ];
     mount.innerHTML = `
       <nav class="nav" aria-label="Primary navigation">
         <div class="nav-inner">
-          <a class="nav-brand" href="./index.html" aria-label="Splendid Shaanxi">
+          <a class="nav-brand" href="./main.html" aria-label="Splendid Shaanxi">
             <span class="brand-seal"><span>秦</span></span>
             <span class="brand-copy"><span class="brand-name">锦绣陕西</span><span class="brand-en">Splendid Shaanxi</span></span>
           </a>

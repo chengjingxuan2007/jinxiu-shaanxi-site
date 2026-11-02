@@ -10,7 +10,9 @@
 
 | 页面 | 文件 | 内容 |
 | --- | --- | --- |
-| 首页 | `index.html` | 形象视频、全域概览、城市缩影地图 |
+| 登录（首页） | `index.html` | 账号登录、游客模式进入 |
+| 注册 | `register.html` | 创建账号（用户名 + 不少于 8 位密码） |
+| 主页 | `main.html` | 形象视频、全域概览、城市缩影地图 |
 | 探索陕西 | `portal.html` | 3D 旋转展厅，进入各板块 |
 | 特色风景 | `scenic.html` | 24 处风景，按城市索引 |
 | 民俗文化 | `culture.html` | 31 项非遗、AI 漫剧、宣传海报、时光轴 |
@@ -28,26 +30,36 @@
 
 ## 三、技术栈
 
-- 原生 HTML + CSS + JavaScript，无框架、无构建步骤、无后端
+- 原生 HTML + CSS + JavaScript 静态站点，无框架、无构建步骤
 - [OpenLayers 10](https://openlayers.org/)（本地 `vendor/ol/`，不依赖 CDN）
 - 天地图瓦片服务（需联网；密钥在 `js/map.js`）
+- 登录 / 注册对接 Django 后端（`../锦绣陕西后端/jiuxiu_shannxi`，MySQL + JWT）
 
 ## 四、本地运行
 
-- 最简单：双击 `index.html`
-- 或起一个静态服务器（推荐，避免个别浏览器对本地文件的限制）：
+1. 先启动后端（提供登录、注册接口）：
 
 ```bash
-python -m http.server 8000
-# 浏览器打开 http://localhost:8000
+cd 锦绣陕西后端/jiuxiu_shannxi
+python manage.py runserver 127.0.0.1:8000
 ```
+
+2. 再启动前端静态服务（推荐，避免个别浏览器对本地文件的限制）：
+
+```bash
+cd 锦绣陕西前端
+python -m http.server 8140
+# 浏览器打开 http://127.0.0.1:8140
+```
+
+不启动后端时，登录页仍可用「游客模式进入」浏览全部内容。
 
 ## 五、目录说明
 
 ```
-├─ index.html / portal.html / scenic.html / culture.html / food.html
+├─ index.html（登录）/ register.html / main.html / portal.html / scenic.html / culture.html / food.html
 ├─ css/          common.css 全站通用；其余按页面拆分
-├─ js/           data.js（内容仓库）、map.js（地图模块）、其余按页面拆分
+├─ js/           data.js（内容仓库）、map.js（地图模块）、auth.js（登录注册）、其余按页面拆分
 ├─ vendor/       ol/（OpenLayers 库）、geo/（陕西省行政边界数据）
 ├─ image/        图片素材
 ├─ video/        视频素材
